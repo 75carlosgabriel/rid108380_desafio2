@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F0F2F5;
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background-color: #1abc9c;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    text-align: left;
+}
+
+footer {
+    background-color: #1abc9c;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.main-container {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main {
+    flex: 3;
+}
+
+aside {
+    flex: 1;
+}
+
+.featured-post {
+    position: relative;
+    color: white;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.featured-post::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0) 60%);
+}
+
+.featured-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+.featured-content .category {
+    padding: 0.3rem 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.featured-content h2 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1abc9c;
+    color: white;
+    padding: 0.8rem 1rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.section-header a {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+.post-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content .category {
+    color: #1abc9c;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.card-content h4 {
+    margin: 0.5rem 0;
+    flex-grow: 1;
+}
+
+.card-content .author {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+.card-content .excerpt {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.card-content time {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.sidebar-widget h4 {
+    background-color: #1abc9c;
+    color: white;
+    padding: 0.8rem 1rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.sidebar-widget {
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.popular-posts-list, .categories-list {
+    padding: 0.5rem 1rem;
+}
+
+.popular-post {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.popular-post:last-child {
+    border-bottom: none;
+}
+
+.popular-post img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.categories-list {
+    list-style: none;
+}
+
+.categories-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+}
+.categories-list li:last-child {
+    border-bottom: none;
+}
+
+.categories-list a {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.categories-list a:hover {
+    color: #1abc9c;
+}
+
+.categories-list span {
+    color: #999;
+}
+
+@media (max-width: 992px) {
+    .main-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+    .featured-content h2 {
+        font-size: 1.5rem;
+    }
+    header {
+        text-align: center;
+    }
+}
